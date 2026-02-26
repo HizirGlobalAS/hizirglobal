@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: var(--font-oswald), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+
+  --color-primary: #1eab7f;
+  --color-primary-hover: #178a66;
+  --color-background-dark: #0F0F0F;
+  --color-surface-dark: #121212;
+  --color-surface-lighter: #1a1a1a;
+
+  --radius: 0.25rem;
+}
+
+/* Base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white font-body antialiased transition-colors duration-300;
+  }
+}
+
+/* Utilities */
+@utility glass-nav {
+  @apply bg-white/90 dark:bg-[#0F0F0F]/90 backdrop-blur-md border-b border-black/5 dark:border-white/5;
+}
+
+@utility glow-hover {
+  &:hover {
+    box-shadow: 0 0 25px rgba(30, 171, 127, 0.2);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-[#0F0F0F];
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1eab7f;
+}
+
+::selection {
+  background: #1eab7f;
+  color: #fff;
+}
