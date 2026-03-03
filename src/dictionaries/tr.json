@@ -166,7 +166,8 @@
             "logistics": "Lojistik",
             "ecommerce": "E-Ticaret",
             "food": "Gıda",
-            "retail": "Perakende"
+            "retail": "Perakende",
+            "agriculture": "Tarım"
         },
         "brands": {
             "yetis_carsi": {
@@ -216,6 +217,13 @@
                 "stats": {
                     "collection": "Tasarım",
                     "store": "Zamana Karşı Duruş"
+                }
+            },
+            "ib_bor": {
+                "desc": "Türkiye'nin yerli ve milli gübre markası İB BOR'un tek yetkili satış ve pazarlama distribütörü.",
+                "stats": {
+                    "region": "Tarım & İnovasyon",
+                    "shops": "Tek Yetkili Distribütör"
                 }
             }
         },
@@ -285,5 +293,26 @@
                 "button_submitting": "Gönderiliyor"
             }
         }
+    },
+    "announcement": {
+        "badge": "YENİ İŞ BİRLİĞİ",
+        "message": "İB BOR gübrelerinin Türkiye genelindeki tüm satış ve pazarlama hakları Hızır Global güvencesiyle!",
+        "cta": "Detayları İncele"
+    },
+    "ib_bor_page": {
+        "title": "İB BOR İş Ortaklığı",
+        "subtitle": "Yerli ve Milli Gücümüz",
+        "desc": "Hızır Global, Türkiye'nin yerli ve milli gübre markası İB BOR'un Türkiye genelindeki tek yetkili satış ve pazarlama distribütörüdür.",
+        "benefits": {
+            "title": "Neden İB BOR?",
+            "items": [
+                "Yüksek Verimlilik: Toprak yapısını düzenleyerek ürün verimini artırır.",
+                "Doğal İçerik: Çevreye duyarlı, sürdürülebilir tarımı destekler.",
+                "Ekonomik Çözüm: Çiftçimiz için uygun maliyetli kaliteli gübre sunar.",
+                "Güçlü Lojistik: Hızır Global güvencesiyle Türkiye'nin her noktasına hızlı teslimat."
+            ]
+        },
+        "cta": "Bayilik Başvurusu Yap",
+        "website": "İB BOR Web Sitesini Ziyaret Et"
     }
 }

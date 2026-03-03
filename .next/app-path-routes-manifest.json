@@ -1,0 +1,18 @@
+{
+  "/[lang]/about/page": "/[lang]/about",
+  "/[lang]/brands/page": "/[lang]/brands",
+  "/[lang]/careers/page": "/[lang]/careers",
+  "/[lang]/contact/page": "/[lang]/contact",
+  "/[lang]/franchise/page": "/[lang]/franchise",
+  "/[lang]/ib-bor/page": "/[lang]/ib-bor",
+  "/[lang]/investor-relations/page": "/[lang]/investor-relations",
+  "/[lang]/kvkk/page": "/[lang]/kvkk",
+  "/[lang]/page": "/[lang]",
+  "/[lang]/privacy-policy/page": "/[lang]/privacy-policy",
+  "/[lang]/terms-of-use/page": "/[lang]/terms-of-use",
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/careers/route": "/api/careers",
+  "/api/franchise/route": "/api/franchise",
+  "/favicon.ico/route": "/favicon.ico"
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Oswald, Inter } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import "../globals.css";
 import { getDictionary } from "@/get-dictionary";
 
@@ -49,6 +50,7 @@ export default async function RootLayout({
         className={`${oswald.variable} ${inter.variable} antialiased bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white transition-colors duration-300`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <AnnouncementBar dict={dict} lang={validLang} />
           <Navbar dict={dict} lang={validLang} />
           {children}
           <Footer dict={dict} lang={validLang} />

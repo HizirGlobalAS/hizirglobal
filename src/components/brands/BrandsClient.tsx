@@ -10,13 +10,14 @@ import {
     Globe,
     Zap,
     Gem,
-    Rocket
+    Rocket,
+    Sprout
 } from "lucide-react";
 import Link from "next/link";
 
-type CategoryKey = "all" | "logistics" | "ecommerce" | "food" | "retail";
+type CategoryKey = "all" | "logistics" | "ecommerce" | "food" | "retail" | "agriculture";
 
-const categoryKeys: CategoryKey[] = ["all", "logistics", "ecommerce", "food", "retail"];
+const categoryKeys: CategoryKey[] = ["all", "logistics", "ecommerce", "food", "retail", "agriculture"];
 
 // Internal category values mapping to keys for filtering
 const categoryValueToKey: Record<string, CategoryKey> = {
@@ -24,7 +25,8 @@ const categoryValueToKey: Record<string, CategoryKey> = {
     "Lojistik": "logistics",
     "E-Ticaret": "ecommerce",
     "Gıda": "food",
-    "Perakende": "retail"
+    "Perakende": "retail",
+    "Tarım": "agriculture"
 };
 
 export default function BrandsClient({ dict, lang }: { dict: any, lang: string }) {
@@ -105,6 +107,17 @@ export default function BrandsClient({ dict, lang }: { dict: any, lang: string }
                 { label: dict.brands_page.brands.hg_collection.stats.collection, value: dict.brands_page.brands.hg_collection.stats.store },
             ],
             href: null,
+        },
+        {
+            id: 8,
+            name: "İB BOR",
+            categoryKey: "agriculture" as CategoryKey,
+            icon: Sprout,
+            description: dict.brands_page.brands.ib_bor.desc,
+            stats: [
+                { label: dict.brands_page.brands.ib_bor.stats.region, value: dict.brands_page.brands.ib_bor.stats.shops },
+            ],
+            href: "https://ib-bor.com/",
         },
     ];
 

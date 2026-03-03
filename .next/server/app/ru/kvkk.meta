@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/[lang]/layout,_N_T_/[lang]/kvkk/layout,_N_T_/[lang]/kvkk/page,_N_T_/ru/kvkk"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/$d$lang/kvkk/__PAGE__",
+    "/$d$lang/kvkk",
+    "/$d$lang",
+    "/_index",
+    "/_head"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/[lang]/layout,_N_T_/[lang]/investor-relations/layout,_N_T_/[lang]/investor-relations/page,_N_T_/ru/investor-relations"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/$d$lang/investor-relations/__PAGE__",
+    "/$d$lang/investor-relations",
+    "/$d$lang",
+    "/_index",
+    "/_head"
+  ]
+}

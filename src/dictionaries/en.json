@@ -166,7 +166,8 @@
             "logistics": "Logistics",
             "ecommerce": "E-Commerce",
             "food": "Food",
-            "retail": "Retail"
+            "retail": "Retail",
+            "agriculture": "Agriculture"
         },
         "brands": {
             "yetis_carsi": {
@@ -216,6 +217,13 @@
                 "stats": {
                     "collection": "Design",
                     "store": "Timeless Elegance"
+                }
+            },
+            "ib_bor": {
+                "desc": "The sole authorized sales and marketing distributor of Turkey's domestic and national fertilizer brand İB BOR.",
+                "stats": {
+                    "region": "Agriculture & Innovation",
+                    "shops": "Sole Authorized Distributor"
                 }
             }
         },
@@ -285,5 +293,26 @@
                 "button_submitting": "Submitting"
             }
         }
+    },
+    "announcement": {
+        "badge": "NEW PARTNERSHIP",
+        "message": "All sales and marketing rights of İB BOR fertilizers across Turkey are under Hızır Global guarantee!",
+        "cta": "View Details"
+    },
+    "ib_bor_page": {
+        "title": "İB BOR Partnership",
+        "subtitle": "Our Domestic and National Power",
+        "desc": "Hızır Global is the sole authorized sales and marketing distributor of Turkey's domestic and national fertilizer brand İB BOR across Turkey.",
+        "benefits": {
+            "title": "Why İB BOR?",
+            "items": [
+                "High Efficiency: Improves soil structure and increases crop yield.",
+                "Natural Content: Environmentally friendly, supports sustainable agriculture.",
+                "Economic Solution: Offers cost-effective quality fertilizer for our farmers.",
+                "Strong Logistics: Fast delivery everywhere in Turkey with Hızır Global guarantee."
+            ]
+        },
+        "cta": "Apply for Dealership",
+        "website": "Visit İB BOR Website"
     }
 }

@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/[lang]/layout,_N_T_/[lang]/ib-bor/layout,_N_T_/[lang]/ib-bor/page,_N_T_/en/ib-bor"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/$d$lang/ib-bor/__PAGE__",
+    "/$d$lang/ib-bor",
+    "/$d$lang",
+    "/_index",
+    "/_head"
+  ]
+}

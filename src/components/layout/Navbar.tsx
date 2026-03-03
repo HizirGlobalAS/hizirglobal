@@ -37,7 +37,7 @@ export default function Navbar({ dict, lang }: { dict: any, lang: string }) {
 
     return (
         <nav
-            className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "glass-nav shadow-lg py-4" : "bg-transparent py-6"
+            className={`w-full z-50 transition-all duration-300 ${isScrolled ? "fixed top-0 glass-nav shadow-lg py-4" : "absolute bg-transparent py-6"
                 }`}
         >
             <div className="container mx-auto px-6 flex justify-between items-center">

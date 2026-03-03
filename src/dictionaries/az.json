@@ -166,7 +166,8 @@
             "logistics": "Logistika",
             "ecommerce": "E-Ticarət",
             "food": "Qida",
-            "retail": "Pərakəndə satış"
+            "retail": "Pərakəndə satış",
+            "agriculture": "Kənd Təsərrüfatı"
         },
         "brands": {
             "yetis_carsi": {
@@ -216,6 +217,13 @@
                 "stats": {
                     "collection": "Dizayn",
                     "store": "Zamana Qarşı Duruş"
+                }
+            },
+            "ib_bor": {
+                "desc": "Türkiyənin yerli və milli gübrə markası İB BOR-un yeganə səlahiyyətli satış və marketinq distribyutoru.",
+                "stats": {
+                    "region": "Kənd Təsərrüfatı",
+                    "shops": "Yeganə Səlahiyyətli Distribyutor"
                 }
             }
         },
@@ -285,5 +293,26 @@
                 "button_submitting": "Göndərilir..."
             }
         }
+    },
+    "announcement": {
+        "badge": "YENİ TƏRƏFDAŞLIQ",
+        "message": "İB BOR gübrələrinin Türkiyə daxilində bütün satış və marketinq hüquqları Hızır Global təminatındadır!",
+        "cta": "Ətraflı Bax"
+    },
+    "ib_bor_page": {
+        "title": "İB BOR Tərəfdaşlığı",
+        "subtitle": "Yerli və Milli Gücümüz",
+        "desc": "Hızır Global, Türkiyənin yerli və milli gübrə markası İB BOR-un Türkiyə daxilində yeganə səlahiyyətli satış və marketinq distribyutorudur.",
+        "benefits": {
+            "title": "Niyə İB BOR?",
+            "items": [
+                "Yüksək Məhsuldarlıq: Torpağın quruluşunu tənzimləyərək məhsuldarlığı artırır.",
+                "Təbii Tərkib: Ekoloji təmiz, davamlı kənd təsərrüfatını dəstəkləyir.",
+                "İqtisadi Həll: Fermerlərimiz üçün uyğun qiymətli keyfiyyətli gübrə təklif edir.",
+                "Güclü Logistika: Hızır Global təminatı ilə Türkiyənin hər yerinə sürətli çatdırılma."
+            ]
+        },
+        "cta": "Diler Yeri üçün Müraciət",
+        "website": "İB BOR Veb Saytına Keç"
     }
 }

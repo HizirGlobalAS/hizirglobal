@@ -1,3 +1,9 @@
 {
+  "/[lang]/brands/page": "app/[lang]/brands/page.js",
+  "/[lang]/careers/page": "app/[lang]/careers/page.js",
+  "/[lang]/contact/page": "app/[lang]/contact/page.js",
+  "/[lang]/franchise/page": "app/[lang]/franchise/page.js",
+  "/[lang]/ib-bor/page": "app/[lang]/ib-bor/page.js",
+  "/[lang]/investor-relations/page": "app/[lang]/investor-relations/page.js",
   "/[lang]/page": "app/[lang]/page.js"
 }
