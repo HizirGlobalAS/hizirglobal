@@ -1,5 +1,6 @@
 import { getDictionary } from "@/get-dictionary";
 import { Metadata } from "next";
+import { AboutClient } from "./components/AboutClient";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
     const { lang } = await params;
@@ -35,29 +36,8 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                             {dict.why_us.description}
                         </p>
 
-                        <div className="grid md:grid-cols-2 gap-8 my-12">
-                            <div className="bg-white dark:bg-white/[0.02] border border-black/5 dark:border-white/5 p-8 rounded shadow-sm dark:shadow-none">
-                                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 font-body">{dict.why_us.card_1_title}</h3>
-                                <p className="text-gray-600 dark:text-gray-400 font-body">{dict.why_us.card_1_desc}</p>
-                            </div>
-                            <div className="bg-white dark:bg-white/[0.02] border border-black/5 dark:border-white/5 p-8 rounded shadow-sm dark:shadow-none">
-                                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 font-body">{dict.why_us.card_2_title}</h3>
-                                <p className="text-gray-600 dark:text-gray-400 font-body">{dict.why_us.card_2_desc}</p>
-                            </div>
-                            <div className="md:col-span-2 bg-white dark:bg-white/[0.02] border border-black/5 dark:border-white/5 p-8 rounded shadow-sm dark:shadow-none">
-                                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 font-body">{dict.why_us.card_3_title}</h3>
-                                <p className="text-gray-600 dark:text-gray-400 font-body">{dict.why_us.card_3_desc}</p>
-                            </div>
-                        </div>
-
-                        <div className="mt-20 border-l-4 border-primary pl-8 py-4 bg-primary/5 dark:bg-transparent p-6 dark:p-0 rounded-r dark:rounded-none">
-                            <p className="text-3xl font-display font-bold mb-4 text-gray-900 dark:text-white">
-                                &quot;{dict.why_us.quote}&quot;
-                            </p>
-                            <p className="text-primary font-bold tracking-widest uppercase text-sm">
-                                {dict.why_us.quote_author}
-                            </p>
-                        </div>
+                        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+                        <AboutClient dict={dict as any} />
                     </div>
                 </div>
             </div>

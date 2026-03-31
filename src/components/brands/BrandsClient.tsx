@@ -29,8 +29,20 @@ const categoryValueToKey: Record<string, CategoryKey> = {
     "Tarım": "agriculture"
 };
 
-export default function BrandsClient({ dict, lang }: { dict: any, lang: string }) {
-    const brands = [
+const ICON_MAP: Record<string, any> = {
+    Store,
+    Utensils,
+    Warehouse,
+    Truck,
+    Globe,
+    Zap,
+    Gem,
+    Sprout,
+    Rocket
+};
+
+export default function BrandsClient({ dict, lang, sanityBrands }: { dict: any, lang: string, sanityBrands?: any[] }) {
+    const mockBrands = [
         {
             id: 1,
             name: "Yetiş+ Çarşı",
@@ -121,6 +133,19 @@ export default function BrandsClient({ dict, lang }: { dict: any, lang: string }
         },
     ];
 
+    const brands = sanityBrands && sanityBrands.length > 0 ? sanityBrands.map((b, i) => ({
+        id: b._id || i,
+        name: b.name || "",
+        categoryKey: (b.categoryKey || "logistics") as CategoryKey,
+        icon: ICON_MAP[b.icon] || Store,
+        description: b.description?.[lang] || b.description?.tr || "",
+        stats: Array.isArray(b.stats) ? b.stats.map((s: any) => ({
+            label: s.label?.[lang] || s.label?.tr || "",
+            value: s.value?.[lang] || s.value?.tr || ""
+        })) : [],
+        href: b.href || null
+    })) : mockBrands;
+
     const [activeCategoryKey, setActiveCategoryKey] = useState<CategoryKey>("all");
     const [activeBrand, setActiveBrand] = useState(0);
 
@@ -129,7 +154,9 @@ export default function BrandsClient({ dict, lang }: { dict: any, lang: string }
             ? brands
             : brands.filter((brand) => brand.categoryKey === activeCategoryKey);
 
-    const ActiveIcon = brands[activeBrand].icon;
+    // activeBrand might be out of bounds if filters are applied, but logic has it filtered. Wait, the original code had activeBrand as an index of `brands`. Let's just safely access it.
+    const currentBrandObj = brands[activeBrand] || brands[0];
+    const ActiveIcon = currentBrandObj.icon;
 
     return (
         <div className="min-h-screen bg-gray-50 dark:bg-[#0F0F0F] pt-32 pb-20 transition-colors duration-300">
@@ -169,13 +196,13 @@ export default function BrandsClient({ dict, lang }: { dict: any, lang: string }
                         <div className="grid md:grid-cols-2 gap-12 items-center">
                             <div className="order-2 md:order-1">
                                 <h2 className="text-4xl font-display font-bold text-gray-900 dark:text-white">
-                                    {brands[activeBrand].name}
+                                    {currentBrandObj.name}
                                 </h2>
                                 <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed font-body mt-4">
-                                    {brands[activeBrand].description}
+                                    {currentBrandObj.description}
                                 </p>
                                 <div className="mt-8 grid grid-cols-2 gap-6">
-                                    {brands[activeBrand].stats.map((stat, idx) => (
+                                    {currentBrandObj.stats.map((stat: any, idx: number) => (
                                         <div key={idx}>
                                             <p className="text-xs text-gray-500 dark:text-gray-500 mb-1 font-medium uppercase font-body">
                                                 {stat.label}
@@ -186,9 +213,9 @@ export default function BrandsClient({ dict, lang }: { dict: any, lang: string }
                                         </div>
                                     ))}
                                 </div>
-                                {brands[activeBrand].href ? (
+                                {currentBrandObj.href ? (
                                     <a
-                                        href={brands[activeBrand].href as string}
+                                        href={currentBrandObj.href as string}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-block mt-8 text-primary font-bold uppercase tracking-widest text-sm hover:text-primary-hover transition-colors font-body hidden md:inline-flex items-center"
@@ -204,9 +231,9 @@ export default function BrandsClient({ dict, lang }: { dict: any, lang: string }
                             <div className="order-1 md:order-2 flex justify-center items-center">
                                 <div className="h-40 w-40 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center text-gray-600 dark:text-gray-400 relative">
                                     <ActiveIcon size={64} />
-                                    {brands[activeBrand].href && (
+                                    {currentBrandObj.href && (
                                         <a
-                                            href={brands[activeBrand].href as string}
+                                            href={currentBrandObj.href as string}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="absolute bottom-0 right-0 bg-primary w-10 h-10 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform md:hidden"
@@ -268,7 +295,7 @@ export default function BrandsClient({ dict, lang }: { dict: any, lang: string }
 
                                 <div className="border-t border-gray-200 dark:border-gray-800 pt-6 mb-8 mt-auto">
                                     <div className="grid grid-cols-2 gap-6">
-                                        {brand.stats.map((stat, idx) => (
+                                        {brand.stats.map((stat: any, idx: number) => (
                                             <div key={idx}>
                                                 <p className="text-xs text-gray-500 dark:text-gray-500 mb-1 font-medium uppercase font-body">
                                                     {stat.label}

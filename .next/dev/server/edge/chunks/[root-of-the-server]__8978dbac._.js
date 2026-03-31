@@ -55,8 +55,8 @@ function middleware(request) {
 }
 const config = {
     matcher: [
-        // Skip all internal paths (_next)
-        '/((?!_next|favicon.ico|images|api|.*\\..*).*)'
+        // Skip all internal paths (_next) and api/admin routes
+        '/((?!_next|admin|favicon.ico|images|api|.*\\..*).*)'
     ]
 };
 }),
