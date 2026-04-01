@@ -20,15 +20,19 @@
       "static/media/9a800f173b8d9e8f-s.p.ea25be69.woff2",
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
+    "[project]/src/app/[lang]/gallery/page": [
+      "static/media/9a800f173b8d9e8f-s.p.ea25be69.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
     "[project]/src/app/[lang]/ib-bor/page": [
       "static/media/9a800f173b8d9e8f-s.p.ea25be69.woff2",
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
-    "[project]/src/app/[lang]/investor-relations/page": [
+    "[project]/src/app/[lang]/kvkk/page": [
       "static/media/9a800f173b8d9e8f-s.p.ea25be69.woff2",
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
-    "[project]/src/app/[lang]/kvkk/page": [
+    "[project]/src/app/[lang]/media-center/page": [
       "static/media/9a800f173b8d9e8f-s.p.ea25be69.woff2",
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],

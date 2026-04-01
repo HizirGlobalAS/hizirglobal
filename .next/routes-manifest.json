@@ -22,6 +22,14 @@
   },
   "dynamicRoutes": [
     {
+      "page": "/admin/[[...index]]",
+      "regex": "^/admin(?:/(.+?))?(?:/)?$",
+      "routeKeys": {
+        "nxtPindex": "nxtPindex"
+      },
+      "namedRegex": "^/admin(?:/(?<nxtPindex>.+?))?(?:/)?$"
+    },
+    {
       "page": "/[lang]",
       "regex": "^/([^/]+?)(?:/)?$",
       "routeKeys": {
@@ -70,6 +78,14 @@
       "namedRegex": "^/(?<nxtPlang>[^/]+?)/franchise(?:/)?$"
     },
     {
+      "page": "/[lang]/gallery",
+      "regex": "^/([^/]+?)/gallery(?:/)?$",
+      "routeKeys": {
+        "nxtPlang": "nxtPlang"
+      },
+      "namedRegex": "^/(?<nxtPlang>[^/]+?)/gallery(?:/)?$"
+    },
+    {
       "page": "/[lang]/ib-bor",
       "regex": "^/([^/]+?)/ib\\-bor(?:/)?$",
       "routeKeys": {
@@ -78,20 +94,20 @@
       "namedRegex": "^/(?<nxtPlang>[^/]+?)/ib\\-bor(?:/)?$"
     },
     {
-      "page": "/[lang]/investor-relations",
-      "regex": "^/([^/]+?)/investor\\-relations(?:/)?$",
-      "routeKeys": {
-        "nxtPlang": "nxtPlang"
-      },
-      "namedRegex": "^/(?<nxtPlang>[^/]+?)/investor\\-relations(?:/)?$"
-    },
-    {
       "page": "/[lang]/kvkk",
       "regex": "^/([^/]+?)/kvkk(?:/)?$",
       "routeKeys": {
         "nxtPlang": "nxtPlang"
       },
       "namedRegex": "^/(?<nxtPlang>[^/]+?)/kvkk(?:/)?$"
+    },
+    {
+      "page": "/[lang]/media-center",
+      "regex": "^/([^/]+?)/media\\-center(?:/)?$",
+      "routeKeys": {
+        "nxtPlang": "nxtPlang"
+      },
+      "namedRegex": "^/(?<nxtPlang>[^/]+?)/media\\-center(?:/)?$"
     },
     {
       "page": "/[lang]/privacy-policy",

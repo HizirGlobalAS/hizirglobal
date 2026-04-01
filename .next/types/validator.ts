@@ -47,6 +47,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 }
 
 
+// Validate ../../src/app/(studio)/admin/[[...index]]/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/admin/[[...index]]">> = Specific
+  const handler = {} as typeof import("../../src/app/(studio)/admin/[[...index]]/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../src/app/[lang]/about/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/[lang]/about">> = Specific
@@ -92,6 +101,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../src/app/[lang]/gallery/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/[lang]/gallery">> = Specific
+  const handler = {} as typeof import("../../src/app/[lang]/gallery/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../src/app/[lang]/ib-bor/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/[lang]/ib-bor">> = Specific
@@ -101,19 +119,19 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
-// Validate ../../src/app/[lang]/investor-relations/page.tsx
+// Validate ../../src/app/[lang]/kvkk/page.tsx
 {
-  type __IsExpected<Specific extends AppPageConfig<"/[lang]/investor-relations">> = Specific
-  const handler = {} as typeof import("../../src/app/[lang]/investor-relations/page.js")
+  type __IsExpected<Specific extends AppPageConfig<"/[lang]/kvkk">> = Specific
+  const handler = {} as typeof import("../../src/app/[lang]/kvkk/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
 }
 
-// Validate ../../src/app/[lang]/kvkk/page.tsx
+// Validate ../../src/app/[lang]/media-center/page.tsx
 {
-  type __IsExpected<Specific extends AppPageConfig<"/[lang]/kvkk">> = Specific
-  const handler = {} as typeof import("../../src/app/[lang]/kvkk/page.js")
+  type __IsExpected<Specific extends AppPageConfig<"/[lang]/media-center">> = Specific
+  const handler = {} as typeof import("../../src/app/[lang]/media-center/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
@@ -167,6 +185,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 
 
 
+
+// Validate ../../src/app/(studio)/layout.tsx
+{
+  type __IsExpected<Specific extends LayoutConfig<"/">> = Specific
+  const handler = {} as typeof import("../../src/app/(studio)/layout.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
 
 // Validate ../../src/app/[lang]/layout.tsx
 {

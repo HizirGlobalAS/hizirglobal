@@ -125,8 +125,8 @@ export function MediaClient({ lang, dict, sanityPressReleases, sanityBrandAssets
               <div className="absolute -right-4 -top-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-colors"></div>
               <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2 relative z-10">{strings.pressContactTitle}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 relative z-10">{strings.pressContactDesc}</p>
-              <a href="mailto:press@hizirglobal.com" className="font-semibold text-primary text-lg hover:underline decoration-primary/50 underline-offset-4 relative z-10 inline-block">
-                press@hizirglobal.com
+              <a href="mailto:social@yetisplus.com" className="font-semibold text-primary text-lg hover:underline decoration-primary/50 underline-offset-4 relative z-10 inline-block">
+                social@yetisplus.com
               </a>
             </div>
 
