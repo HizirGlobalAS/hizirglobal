@@ -17,18 +17,32 @@ export async function POST(req: NextRequest) {
         const brands = formData.get("brands") as string; // Will come as JSON string or comma separated
 
         // Handle multiple files
-        const files = formData.getAll("files") as File[];
+        const files = formData.getAll("files");
         const attachments = [];
+        let totalSize = 0;
+        const MAX_SIZE = 4 * 1024 * 1024; // 4 MB limit due to Node.js/Vercel payload limits
 
         for (const file of files) {
-            if (file && file.size > 0) {
-                const bytes = await file.arrayBuffer();
-                const buffer = Buffer.from(bytes);
-                attachments.push({
-                    filename: file.name,
-                    content: buffer,
-                    contentType: file.type,
-                });
+            // Next.js File interface check
+            if (file && typeof file === "object" && "size" in file && file.size > 0) {
+                totalSize += file.size;
+                
+                if (totalSize > MAX_SIZE) {
+                    return NextResponse.json({ message: "Yüklediğiniz dosyaların toplam boyutu 4 MB'ı geçemez." }, { status: 400 });
+                }
+                
+                try {
+                    const bytes = await (file as any).arrayBuffer();
+                    const buffer = Buffer.from(bytes);
+                    attachments.push({
+                        filename: (file as any).name || "dokuman",
+                        content: buffer,
+                        contentType: (file as any).type || "application/octet-stream",
+                    });
+                } catch (fileError) {
+                    console.error("Dosya buffer okuma hatası:", fileError);
+                    return NextResponse.json({ message: "Dosya okunamadı veya formatı geçersiz." }, { status: 400 });
+                }
             }
         }
 
@@ -65,18 +79,23 @@ export async function POST(req: NextRequest) {
             </div>
         `;
 
-        await transporter.sendMail({
-            ...baseMailOptions,
-            to: process.env.FRANCHISE_TO_EMAIL || process.env.SMTP_TO_EMAIL, // Fallback to general if not set
-            subject: `Yeni Franchise Başvurusu: ${firstName} ${lastName} - ${city}`,
-            html: htmlContent,
-            attachments,
-        });
+        try {
+            await transporter.sendMail({
+                ...baseMailOptions,
+                to: process.env.FRANCHISE_TO_EMAIL || process.env.SMTP_TO_EMAIL, // Fallback to general if not set
+                subject: `Yeni Franchise Başvurusu: ${firstName} ${lastName} - ${city}`,
+                html: htmlContent,
+                attachments,
+            });
+        } catch (mailError: any) {
+            console.error("Nodemailer Hatası (SMTP):", mailError);
+            return NextResponse.json({ message: `Mail gönderilemedi: ${mailError.message || "Bilinmeyen hata"}` }, { status: 500 });
+        }
 
         return NextResponse.json({ success: true, message: "Franchise başvurusu başarıyla iletildi." }, { status: 200 });
 
     } catch (error: any) {
-        console.error("Nodemailer Hatası (Franchise):", error);
-        return NextResponse.json({ message: "Sistemsel bir hata oluştu." }, { status: 500 });
+        console.error("Franchise Form İşleme Hatası:", error);
+        return NextResponse.json({ message: `Sistemsel bir hata oluştu: ${error.message || ""}` }, { status: 500 });
     }
 }

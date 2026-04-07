@@ -17,9 +17,24 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ message: "Lütfen gerekli tüm alanları (ve CV dosyasını) eksiksiz doldurun." }, { status: 400 });
         }
 
+        // 4 MB Limit Kontrolü
+        const MAX_SIZE = 4 * 1024 * 1024;
+        if (cvFile.size > MAX_SIZE) {
+            return NextResponse.json({ message: "Yüklediğiniz CV dosyası 4 MB'ı geçemez." }, { status: 400 });
+        }
+
         // CV dosyasını belleğe (Buffer) alma
-        const bytes = await cvFile.arrayBuffer();
-        const buffer = Buffer.from(bytes);
+        let buffer: Buffer;
+        let contentType = cvFile.type || "application/octet-stream";
+        let filename = cvFile.name || "cv_dosyasi";
+        
+        try {
+            const bytes = await (cvFile as any).arrayBuffer();
+            buffer = Buffer.from(bytes);
+        } catch (fileError) {
+            console.error("Kariyer CV okuma hatası:", fileError);
+            return NextResponse.json({ message: "CV dosyası okunamadı veya formatı geçersiz." }, { status: 400 });
+        }
 
         // Gönderilecek Email İçeriği
         const htmlContent = `
@@ -39,24 +54,29 @@ export async function POST(req: NextRequest) {
             </div>
         `;
 
-        await transporter.sendMail({
-            ...baseMailOptions,
-            to: process.env.CAREERS_TO_EMAIL || process.env.SMTP_TO_EMAIL, // Fallback to general if not set
-            subject: `Yeni İş Başvurusu: ${firstName} ${lastName} - ${department}`,
-            html: htmlContent,
-            attachments: [
-                {
-                    filename: cvFile.name,
-                    content: buffer,
-                    contentType: cvFile.type,
-                },
-            ],
-        });
+        try {
+            await transporter.sendMail({
+                ...baseMailOptions,
+                to: process.env.CAREERS_TO_EMAIL || process.env.SMTP_TO_EMAIL, // Fallback to general if not set
+                subject: `Yeni İş Başvurusu: ${firstName} ${lastName} - ${department}`,
+                html: htmlContent,
+                attachments: [
+                    {
+                        filename,
+                        content: buffer,
+                        contentType,
+                    },
+                ],
+            });
+        } catch (mailError: any) {
+            console.error("Nodemailer Hatası (SMTP - Kariyer):", mailError);
+            return NextResponse.json({ message: `Mail gönderilemedi: ${mailError.message || "Bilinmeyen hata"}` }, { status: 500 });
+        }
 
         return NextResponse.json({ success: true, message: "Başvuru başarıyla iletildi." }, { status: 200 });
 
     } catch (error: any) {
-        console.error("Nodemailer Hatası (Kariyer):", error);
-        return NextResponse.json({ message: "Sistemsel bir hata oluştu. Lütfen daha sonra tekrar deneyin." }, { status: 500 });
+        console.error("Kariyer Form İşleme Hatası:", error);
+        return NextResponse.json({ message: `Sistemsel bir hata oluştu: ${error.message || ""}` }, { status: 500 });
     }
 }

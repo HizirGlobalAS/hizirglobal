@@ -9,8 +9,25 @@ export default function Step4Documents({ formData, updateFormData, prevStep, dic
     const [errorMessage, setErrorMessage] = useState("");
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setErrorMessage("");
         if (e.target.files) {
-            updateFormData({ files: Array.from(e.target.files) });
+            const selectedFiles = Array.from(e.target.files);
+            const MAX_SIZE = 4 * 1024 * 1024; // 4 MB limit
+            
+            let totalSize = 0;
+            const validFiles: File[] = [];
+
+            for (const file of selectedFiles) {
+                totalSize += file.size;
+                
+                if (file.size > MAX_SIZE || totalSize > MAX_SIZE) {
+                    setErrorMessage("Seçilen dosyaların toplam boyutu 4 MB'ı geçemez.");
+                    return;
+                }
+                validFiles.push(file);
+            }
+
+            updateFormData({ files: validFiles });
         }
     };
 
