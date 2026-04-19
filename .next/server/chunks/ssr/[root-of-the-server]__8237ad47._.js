@@ -8,6 +8,6 @@ module.exports=[193695,(a,b,c)=>{b.exports=a.x("next/dist/shared/lib/no-fallback
         "images": images[].asset->url,
         youtubeId,
         date
-    }`)}async function h({params:a}){let{lang:e}=await a,f=["en","tr","ru","az"].includes(e)?e:"tr",h=await (0,c.getDictionary)(f),i=await g();return(0,b.jsx)("main",{className:"min-h-screen pt-32 pb-20 bg-gray-50 dark:bg-[#0F0F0F] transition-colors duration-300",children:(0,b.jsx)("div",{className:"container mx-auto px-6",children:(0,b.jsx)(d.GalleryClient,{lang:f,dict:h,sanityGallery:i})})})}a.s(["default",()=>h,"generateMetadata",()=>f])}];
+    }`)}async function h({params:a}){let{lang:e}=await a,f=["en","tr","ru","az"].includes(e)?e:"tr",h=await (0,c.getDictionary)(f),i=await g();return(0,b.jsx)("main",{className:"min-h-screen pt-32 pb-20 bg-gray-50 dark:bg-[#0F0F0F] transition-colors duration-300",children:(0,b.jsx)("div",{className:"container mx-auto px-6",children:(0,b.jsx)(d.GalleryClient,{lang:f,dict:h,sanityGallery:i})})})}a.s(["default",()=>h,"generateMetadata",()=>f,"revalidate",0,60])}];
 
 //# sourceMappingURL=%5Broot-of-the-server%5D__8237ad47._.js.map

@@ -7,7 +7,23 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function AudioPlayerWidget() {
   const { isPlaying, isMuted, currentTrack, togglePlay, toggleMute, playNext } = useAudio();
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
+  const [hasManuallyToggled, setHasManuallyToggled] = useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (!hasManuallyToggled) {
+        if (window.scrollY > 150) {
+          setIsExpanded(false);
+        } else {
+          setIsExpanded(true);
+        }
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [hasManuallyToggled]);
 
   // If we're not mounted yet, to avoid hydration mismatch, returning early could be done, 
   // but AudioContext already returns children without error. 
@@ -20,6 +36,7 @@ export default function AudioPlayerWidget() {
       <AnimatePresence>
         {isExpanded ? (
           <motion.div
+            key="expanded"
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -65,7 +82,10 @@ export default function AudioPlayerWidget() {
 
             {/* Collapse Button */}
             <button
-              onClick={() => setIsExpanded(false)}
+              onClick={() => {
+                setIsExpanded(false);
+                setHasManuallyToggled(true);
+              }}
               className="ml-2 w-6 h-6 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-colors"
               aria-label="Collapse player"
             >
@@ -74,10 +94,14 @@ export default function AudioPlayerWidget() {
           </motion.div>
         ) : (
           <motion.button
+            key="collapsed"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
-            onClick={() => setIsExpanded(true)}
+            onClick={() => {
+                setIsExpanded(true);
+                setHasManuallyToggled(true);
+            }}
             className="w-14 h-14 flex items-center justify-center rounded-full shadow-xl bg-white/90 dark:bg-black/80 backdrop-blur-md border border-gray-200/50 dark:border-white/10 text-gray-800 dark:text-white hover:scale-105 transition-transform"
             aria-label="Open audio player"
           >

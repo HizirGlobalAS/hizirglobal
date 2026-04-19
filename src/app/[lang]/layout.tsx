@@ -36,6 +36,8 @@ export async function generateStaticParams() {
   return [{ lang: 'en' }, { lang: 'tr' }, { lang: 'ru' }, { lang: 'az' }]
 }
 
+export const revalidate = 60; // 1 minute ISR caching
+
 async function getRadioTracks() {
   try {
     const tracks = await client.fetch(`*[_type == "radio" && isActive == true] | order(_createdAt asc) {
@@ -67,7 +69,7 @@ export default async function RootLayout({
       <body
         className={`${oswald.variable} ${inter.variable} antialiased bg-white dark:bg-[#0F0F0F] text-gray-900 dark:text-white transition-colors duration-300`}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={true}>
           <AudioProvider initialTracks={initialRadioTracks}>
             <AnnouncementBar dict={dict} lang={validLang} />
             <Navbar dict={dict} lang={validLang} />

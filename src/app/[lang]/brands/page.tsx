@@ -14,6 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     };
 }
 
+export const revalidate = 60; // 1 minute ISR caching
+
 // Fetch from Sanity
 async function getBrands() {
     return client.fetch(

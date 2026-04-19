@@ -52,9 +52,10 @@ export const galleryType = defineType({
     }),
     defineField({
       name: 'images',
-      title: 'Koleksiyon Görselleri',
-      description: 'Bu koleksiyona ait birden fazla resim ekleyebilirsiniz',
+      title: 'Koleksiyon Görselleri (Toplu Yükleme)',
+      description: 'TOPLU YÜKLEME: Bilgisayarınızdan 10-20 resmi aynı anda seçip farenizle sürükleyerek direkt bu alanın üzerine bırakabilirsiniz. HEPSİ OTOMATİK YÜKLENİR.',
       type: 'array',
+      options: { layout: 'grid' },
       of: [{ type: 'image', options: { hotspot: true } }],
     }),
     defineField({

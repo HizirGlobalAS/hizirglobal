@@ -1,93 +1,11 @@
-[02:06:39.776] Browser ERROR   {}
-[02:06:39.776] Browser ERROR   {}
-[02:06:39.777] Browser ERROR   {}
-[02:06:39.777] Browser ERROR   {}
-[02:06:39.777] Browser ERROR   {}
-[02:06:39.777] Browser ERROR   {}
-[02:06:39.777] Browser ERROR   unhandledRejection: TypeError: network error
-[02:06:39.777] Browser ERROR   {}
-[02:06:39.777] Browser ERROR   {}
-[02:06:41.780] Browser ERROR   unhandledRejection: AbortError: signal is aborted without reason
-[02:17:17.776] Browser WARN    Image with src "/hizir-global.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[02:23:29.778] Browser ERROR   {}
-[02:23:29.779] Browser ERROR   {}
-[02:23:29.779] Browser ERROR   {}
-[02:23:29.780] Browser ERROR   {}
-[02:25:16.575] Server  ERROR   ⨯ Error: ENOENT: no such file or directory, open '/Users/evren/Documents/GitHub/hizirglobal/.next/dev/server/app/[lang]/page/build-manifest.json'
-[02:25:16.589] Server  ERROR   ⨯ TurbopackInternalError: Failed to restore task data (corrupted database or bug): Data for pick_endpoint (TaskId 568))
-
-Debug info:
-- Execution of get_written_endpoint_with_issues_operation failed
-- Execution of endpoint_write_to_disk_operation failed
-- Failed to restore task data (corrupted database or bug): Data for pick_endpoint (TaskId 568))
-  
-  Caused by:
-      0: Looking up data for TaskId 568 from database failed
-      1: Unable to open static sorted file referenced from 00001585.meta
-      2: Unable to open static sorted file 00001579.sst
-      3: No such file or directory (os error 2)
-[02:25:16.608] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/evren/Documents/GitHub/hizirglobal/.next/dev/server/app/[lang]/page/build-manifest.json'
-[02:25:16.609] Server  ERROR   ⨯ TurbopackInternalError: Failed to restore task data (corrupted database or bug): Data for pick_endpoint (TaskId 568))
-
-Debug info:
-- Execution of get_written_endpoint_with_issues_operation failed
-- Execution of endpoint_write_to_disk_operation failed
-- Failed to restore task data (corrupted database or bug): Data for pick_endpoint (TaskId 568))
-  
-  Caused by:
-      0: Looking up data for TaskId 568 from database failed
-      1: Unable to open static sorted file referenced from 00001585.meta
-      2: Unable to open static sorted file 00001579.sst
-      3: No such file or directory (os error 2)
-[02:25:16.610] Server  ERROR   TurbopackInternalError: Failed to restore task data (corrupted database or bug): Data for pick_endpoint (TaskId 568))
-
-Debug info:
-- Execution of get_written_endpoint_with_issues_operation failed
-- Execution of endpoint_write_to_disk_operation failed
-- Failed to restore task data (corrupted database or bug): Data for pick_endpoint (TaskId 568))
-  
-  Caused by:
-      0: Looking up data for TaskId 568 from database failed
-      1: Unable to open static sorted file referenced from 00001585.meta
-      2: Unable to open static sorted file 00001579.sst
-      3: No such file or directory (os error 2)
-[02:25:16.644] Server  ERROR   ⨯ Error: ENOENT: no such file or directory, open '/Users/evren/Documents/GitHub/hizirglobal/.next/dev/server/app/[lang]/page/build-manifest.json'
-[02:25:16.647] Server  ERROR   ⨯ TurbopackInternalError: Failed to restore task data (corrupted database or bug): Data for pick_endpoint (TaskId 568))
-
-Debug info:
-- Execution of get_written_endpoint_with_issues_operation failed
-- Execution of endpoint_write_to_disk_operation failed
-- Failed to restore task data (corrupted database or bug): Data for pick_endpoint (TaskId 568))
-  
-  Caused by:
-      0: Looking up data for TaskId 568 from database failed
-      1: Unable to open static sorted file referenced from 00001585.meta
-      2: Unable to open static sorted file 00001579.sst
-      3: No such file or directory (os error 2)
-[02:25:16.668] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/evren/Documents/GitHub/hizirglobal/.next/dev/server/app/[lang]/page/build-manifest.json'
-[02:25:16.670] Server  ERROR   ⨯ TurbopackInternalError: Failed to restore task data (corrupted database or bug): Data for pick_endpoint (TaskId 568))
-
-Debug info:
-- Execution of get_written_endpoint_with_issues_operation failed
-- Execution of endpoint_write_to_disk_operation failed
-- Failed to restore task data (corrupted database or bug): Data for pick_endpoint (TaskId 568))
-  
-  Caused by:
-      0: Looking up data for TaskId 568 from database failed
-      1: Unable to open static sorted file referenced from 00001585.meta
-      2: Unable to open static sorted file 00001579.sst
-      3: No such file or directory (os error 2)
-[02:25:16.671] Server  ERROR   TurbopackInternalError: Failed to restore task data (corrupted database or bug): Data for pick_endpoint (TaskId 568))
-
-Debug info:
-- Execution of get_written_endpoint_with_issues_operation failed
-- Execution of endpoint_write_to_disk_operation failed
-- Failed to restore task data (corrupted database or bug): Data for pick_endpoint (TaskId 568))
-  
-  Caused by:
-      0: Looking up data for TaskId 568 from database failed
-      1: Unable to open static sorted file referenced from 00001585.meta
-      2: Unable to open static sorted file 00001579.sst
-      3: No such file or directory (os error 2)
-[02:29:53.923] Server  LOG       Reload env: .env.local
-[02:30:15.029] Server  LOG       Reload env: .env.local
+[00:00:00.725] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:00.808] Server  LOG     ✓ Ready in 612ms
+[00:00:08.486] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:08.661] Browser WARN    Image with src "/hizir-global.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:00:08.661] Browser WARN    Image with src "/hizir-global.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:08.661] Browser WARN    Image with src "/3.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:10.157] Browser WARN    YouTube player instance muted error: {}
+[00:00:10.926] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:11:41.825] Server  LOG     ✓ Compiled in 237ms
+[00:13:15.677] Browser WARN    Image with src "/gallery/bor-gubresi.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes

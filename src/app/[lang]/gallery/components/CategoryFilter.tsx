@@ -27,7 +27,7 @@ export function CategoryFilter({
   return (
     <div className="w-full flex flex-col gap-4 mb-12">
       {/* Main Categories */}
-      <div className="flex flex-wrap gap-2 md:gap-4">
+      <div className="flex flex-nowrap md:flex-wrap overflow-x-auto pb-4 md:pb-0 gap-2 md:gap-4 snap-x snap-mandatory md:snap-none -mx-4 px-4 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden">
         {categories.map((cat) => (
           <button
             key={cat.id}
@@ -35,7 +35,7 @@ export function CategoryFilter({
               onCategoryChange(cat.id);
               onSubCategoryChange(null);
             }}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 relative ${
+            className={`whitespace-nowrap shrink-0 snap-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 relative ${
               activeCategory === cat.id
                 ? "text-white"
                 : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white bg-gray-100 dark:bg-white/5"
@@ -56,13 +56,13 @@ export function CategoryFilter({
       {/* Sub Categories (if any) */}
       {currentSubs.length > 0 && (
         <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="flex flex-wrap gap-2 pt-2 border-t border-gray-200 dark:border-white/10"
+           initial={{ opacity: 0, y: -10 }}
+           animate={{ opacity: 1, y: 0 }}
+           className="flex flex-nowrap md:flex-wrap overflow-x-auto pb-4 md:pb-0 gap-2 pt-2 border-t border-gray-200 dark:border-white/10 snap-x snap-mandatory md:snap-none -mx-4 px-4 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden"
         >
           <button
             onClick={() => onSubCategoryChange(null)}
-            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
+            className={`whitespace-nowrap shrink-0 snap-center px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
               activeSubCategory === null
                 ? "bg-gray-800 text-white dark:bg-white dark:text-black"
                 : "text-gray-500 hover:bg-gray-100 dark:hover:bg-white/5"
@@ -75,7 +75,7 @@ export function CategoryFilter({
              <button
              key={sub.id}
              onClick={() => onSubCategoryChange(sub.id)}
-             className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
+             className={`whitespace-nowrap shrink-0 snap-center px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
                activeSubCategory === sub.id
                  ? "bg-gray-800 text-white dark:bg-white dark:text-black"
                  : "text-gray-500 hover:bg-gray-100 dark:hover:bg-white/5"

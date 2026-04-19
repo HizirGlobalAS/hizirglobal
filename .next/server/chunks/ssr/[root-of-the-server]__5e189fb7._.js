@@ -17,6 +17,6 @@ module.exports=[193695,(a,b,c)=>{b.exports=a.x("next/dist/shared/lib/no-fallback
         description,
         iconType,
         "url": fileUpload.asset->url
-    }`)}}async function h({params:a}){let{lang:e}=await a,f=["en","tr","ru","az"].includes(e)?e:"tr",h=await (0,c.getDictionary)(f),{pressReleases:i,brandAssets:j}=await g();return(0,b.jsx)("main",{className:"min-h-screen pt-32 pb-20 bg-gray-50 dark:bg-[#0F0F0F] transition-colors duration-300",children:(0,b.jsx)("div",{className:"container mx-auto px-6",children:(0,b.jsx)(d.MediaClient,{lang:f,dict:h,sanityPressReleases:i,sanityBrandAssets:j})})})}a.s(["default",()=>h,"generateMetadata",()=>f])}];
+    }`)}}async function h({params:a}){let{lang:e}=await a,f=["en","tr","ru","az"].includes(e)?e:"tr",h=await (0,c.getDictionary)(f),{pressReleases:i,brandAssets:j}=await g();return(0,b.jsx)("main",{className:"min-h-screen pt-32 pb-20 bg-gray-50 dark:bg-[#0F0F0F] transition-colors duration-300",children:(0,b.jsx)("div",{className:"container mx-auto px-6",children:(0,b.jsx)(d.MediaClient,{lang:f,dict:h,sanityPressReleases:i,sanityBrandAssets:j})})})}a.s(["default",()=>h,"generateMetadata",()=>f,"revalidate",0,60])}];
 
 //# sourceMappingURL=%5Broot-of-the-server%5D__5e189fb7._.js.map

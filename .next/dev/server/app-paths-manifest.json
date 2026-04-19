@@ -1,0 +1,5 @@
+{
+  "/[lang]/contact/page": "app/[lang]/contact/page.js",
+  "/[lang]/ib-bor/page": "app/[lang]/ib-bor/page.js",
+  "/[lang]/page": "app/[lang]/page.js"
+}

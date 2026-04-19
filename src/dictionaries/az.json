@@ -300,19 +300,82 @@
         "cta": "Ətraflı Bax"
     },
     "ib_bor_page": {
-        "title": "İB BOR Tərəfdaşlığı",
-        "subtitle": "Yerli və Milli Gücümüz",
-        "desc": "Hızır Global, Türkiyənin yerli və milli gübrə markası İB BOR-un Türkiyə daxilində yeganə səlahiyyətli satış və marketinq distribyutorudur.",
+        "hero": {
+            "title": "İB BOR İlə Torpağınıza Həyat Verin",
+            "subtitle": "Yerli və Milli Gücümüz",
+            "desc": "Türkiyənin yerli və milli gübrə markası İB BOR ilə bitki inkişafını sürətləndirin, məhsul keyfiyyətini və gəlirinizi artırın. Torpağın gücünü Hızır Global təminatı ilə kəşf edin.",
+            "buy_now": "İndi Al",
+            "whatsapp": "WhatsApp ilə Əlaqə Saxla"
+        },
+        "overview": {
+            "title": "İB BOR Nədir?",
+            "desc": "İB BOR, torpağın kimyəvi və fiziki quruluşunu tənzimləyən, bitkinin ehtiyac duyduğu mikro və makro elementlərin mənimsənilməsini asanlaşdıran maye bir bitki qidalandırma məhsuludur. %100 yerli istehsal olaraq Hızır Global distribyutorluğu ilə Türk fermeri ilə görüşür."
+        },
+        "usage_areas": {
+            "title": "İB BOR Haralarda İstifadə Olunur?",
+            "items": {
+                "field": {
+                    "title": "Tarla Bitkiləri",
+                    "desc": "Buğda, arpa, qarğıdalı, günəbaxan, pambıq və şəkər çuğunduru kimi açıq tarla məhsullarında kök inkişafını gücləndirir və məhsuldarlığı artırır."
+                },
+                "veg_fruit": {
+                    "title": "Tərəvəz və Meyvə",
+                    "desc": "Pomidor, bibər, sitrus, zeytun, fındıq və s. məhsullarda çiçəklənmə və meyvə tutumunu artırır. Rəf ömrünü uzadır və bazar dəyərini yüksəldir."
+                },
+                "greenhouse": {
+                    "title": "İstixana İstifadəsi",
+                    "desc": "Örtülü əkinçilikdə sürətli böyümə təmin edir. Stres şərtlərinə (soyuq, isti) qarşı bitki müqavimətini gücləndirərək fasiləsiz məhsul yığımı imkanı təqdim edir."
+                }
+            }
+        },
         "benefits": {
-            "title": "Niyə İB BOR?",
+            "title": "Əsas Faydaları",
             "items": [
-                "Yüksək Məhsuldarlıq: Torpağın quruluşunu tənzimləyərək məhsuldarlığı artırır.",
-                "Təbii Tərkib: Ekoloji təmiz, davamlı kənd təsərrüfatını dəstəkləyir.",
-                "İqtisadi Həll: Fermerlərimiz üçün uyğun qiymətli keyfiyyətli gübrə təklif edir.",
-                "Güclü Logistika: Hızır Global təminatı ilə Türkiyənin hər yerinə sürətli çatdırılma."
+                "Bitki İnkişafını Sürətləndirir: Hüceyrə bölünməsini təşviq edərək sağlam böyüməni dəstəkləyir.",
+                "Məhsul Keyfiyyətini Artırır: Meyvə/tərəvəzlərdə rəng, dad və irilik meyarlarını optimallaşdırır.",
+                "Müqaviməti Gücləndirir: Quraqlıq və şaxta kimi ekoloji stres faktorlarına qarşı bitkini qoruyur.",
+                "Torpağı Yaxşılaşdırır: Torpağın su tutma tutumunu və havalanmasını artıraraq kök sağlamlığını dəstəkləyir."
             ]
         },
-        "cta": "Diler Yeri üçün Müraciət",
-        "website": "İB BOR Veb Saytına Keç"
+        "how_to_use": {
+            "title": "Necə İstifadə Olunur?",
+            "leaves": {
+                "title": "Yarpaqdan Tətbiq",
+                "desc": "Pülverizator ilə bitkinin bütün yaşıl hissələrinə püskürdülərək sulandırılmış şəkildə tətbiq olunur. Səhər erkən və ya axşam sərinliyində məsləhət görülür."
+            },
+            "soil": {
+                "title": "Torpağa Tətbiq",
+                "desc": "Damcı suvarma sistemləri və ya çiləyici ilə birbaşa kök bölgəsinə çatdırılır. Torpaqdakı bağlı qida maddələrinin həll olunaraq bitkiyə keçməsini təmin edir."
+            }
+        },
+        "trust": {
+            "local": "Yerli İstehsal",
+            "distributor": "Yeganə Səlahiyyətli Distribyutor",
+            "logistics": "81 İlə Sürətli Logistika"
+        },
+        "roi_anchor": "Maliyet Üstünlüyü: 1 Litr İB BOR ilə 1 dönüm ərazi qidalandırıla bilər.",
+        "b2b": {
+            "title": "Bölgənizdə İB BOR Dileri Olun",
+            "desc": "Zirai dərman dilerləri üçün xüsusi endirim dərəcələri və topdansatış fürsətləri ilə yüksək mənfəət marjı təmin edin. Hızır Global təminatı ilə kənd təsərrüfatının gücünə ortaq olun.",
+            "cta": "Dilerlik Müraciəti"
+        },
+        "social_proof": {
+            "title": "Türkiyənin Dörd Bir Yanından İstehsalçı Rəyləri",
+            "quote_1": "Keçən il pomidor tarlamda istifadə etdim. Həm erkən yetişmə təmin etdi, həm də tonnajda %20 məhsuldarlıq artımı aldım.",
+            "author_1": "Bursa / Karacabey İstehsalçısı"
+        },
+        "faq": {
+            "title": "Tez-tez Verilən Suallar",
+            "q1": "İB BOR gübrəsi hansı dövrdə istifadə edilməlidir?",
+            "a1": "Erkən inkişaf dövrü və çiçəklənmə ən yüksək məhsuldarlığı təmin edir. Ancaq bitkinin stres dövrlərində qoruyucu olaraq da istifadə edilə bilər.",
+            "q2": "Digər kənd təsərrüfatı dərmanları (pestisidlər) ilə qarışdırılaraq istifadə edilə bilərmi?",
+            "a2": "Bəli, İB BOR bir çox ot, həşərat və göbələk dərmanı ilə çən qarışımı üçün uygundur. Əvvəlcədən kiçik bir sınaq məsləhət görülür."
+        },
+        "ctas": {
+            "title": "İB BOR-un Gücüylə İndi Tanış Olun",
+            "buy_now": "İndi Al",
+            "whatsapp": "WhatsApp İlə Əlaqə",
+            "contact": "Ətraflı Məlumat Al"
+        }
     }
 }

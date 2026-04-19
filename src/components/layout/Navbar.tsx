@@ -166,9 +166,9 @@ export default function Navbar({ dict, lang }: { dict: any, lang: string }) {
                         );
                     })}
 
-                    {/* Language Switcher Dropdown */}
+                    {/* Desktop Language Switcher Dropdown */}
                     <div className="relative group flex items-center justify-center min-w-[50px] py-1 h-full ml-2 border-l border-gray-200 dark:border-white/10 pl-6">
-                        <div className="flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-300 cursor-pointer hover:text-primary transition-colors">
+                        <div className="flex items-center gap-1.5 text-[11px] xl:text-xs font-bold text-gray-700 dark:text-gray-300 cursor-pointer hover:text-primary transition-colors">
                             <Globe size={14} />
                             <span>{lang.toUpperCase()}</span>
                         </div>
@@ -205,26 +205,52 @@ export default function Navbar({ dict, lang }: { dict: any, lang: string }) {
                         <ArrowRight className="ml-2 w-4 h-4 flex-shrink-0" />
                     </Link>
                 </div>
+                {/* Mobile Right Controls: Compact Lang + Hamburger */}
+                <div className="flex items-center gap-3 xl:hidden">
+                    {/* Compact Lang Switcher (Hidden on max-xs, visible on sm and up) */}
+                    <div className="hidden sm:flex relative group items-center justify-center min-w-[40px] pl-4 border-l border-gray-200 dark:border-white/10">
+                        <div className="flex items-center gap-1 text-[11px] font-bold text-gray-700 dark:text-gray-300 cursor-pointer hover:text-primary transition-colors">
+                            <Globe size={14} />
+                            <span>{lang.toUpperCase()}</span>
+                        </div>
+                        <div className="absolute top-[120%] right-0 mt-2 w-32 bg-white/95 dark:bg-[#121212]/95 backdrop-blur-md border border-black/10 dark:border-white/10 rounded-xl overflow-hidden shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            {[
+                                { code: 'tr', label: 'TR' },
+                                { code: 'en', label: 'EN' },
+                                { code: 'ru', label: 'RU' },
+                                { code: 'az', label: 'AZ' }
+                            ].map(locale => (
+                                <Link
+                                    key={locale.code} href={switchLanguage(locale.code)}
+                                    className={`block px-4 py-3 text-xs font-bold transition-colors text-center ${lang === locale.code ? "text-primary bg-primary/10" : "text-gray-600 dark:text-gray-400 hover:text-primary hover:bg-black/5"}`}
+                                >
+                                    {locale.label}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
 
-                {/* Mobile Menu Button */}
-                <button
-                    className="xl:hidden text-gray-900 dark:text-white focus:outline-none p-2"
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                >
-                    {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-                </button>
+                    {/* Mobile Menu Button */}
+                    <button
+                        className="text-gray-900 dark:text-white focus:outline-none p-2 ml-1"
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    >
+                        {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                    </button>
+                </div>
             </div>
 
-            {/* Mobile Menu Overlay */}
+            {/* Mobile Menu Overlay - Full Screen Fixed */}
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <motion.div 
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="xl:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-[#0F0F0F]/95 backdrop-blur-xl border-t border-black/5 dark:border-white/5 overflow-hidden shadow-2xl"
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        className="xl:hidden fixed inset-0 top-[70px] z-40 bg-white/95 dark:bg-[#0F0F0F]/95 backdrop-blur-2xl overflow-y-auto shadow-2xl"
+                        style={{ height: "calc(100vh - 70px)" }}
                     >
-                        <div className="p-6 flex flex-col space-y-1 max-h-[80vh] overflow-y-auto">
+                        <div className="p-6 flex flex-col space-y-1 pb-24">
                             {navLinks.map((link) => (
                                 <div key={link.name} className="flex flex-col">
                                     {/* Mobile Main Link or Accordion Trigger */}

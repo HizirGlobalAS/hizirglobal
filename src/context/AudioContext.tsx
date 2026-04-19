@@ -52,10 +52,14 @@ export function AudioProvider({ children, initialTracks = [] }: { children: Reac
   // Sync mute state to player and local storage
   useEffect(() => {
     if (playerRef.current && isPlayerReady) {
-      if (isMuted) {
-         playerRef.current.mute();
-      } else {
-         playerRef.current.unMute();
+      try {
+        if (isMuted) {
+           playerRef.current.mute();
+        } else {
+           playerRef.current.unMute();
+        }
+      } catch (error) {
+         console.warn("YouTube player instance muted error:", error);
       }
     }
     if (isClient) {
@@ -68,12 +72,16 @@ export function AudioProvider({ children, initialTracks = [] }: { children: Reac
   const togglePlay = () => {
     if (!playerRef.current || !isPlayerReady) return;
     
-    if (isPlaying) {
-      playerRef.current.pauseVideo();
-      setIsPlaying(false);
-    } else {
-      playerRef.current.playVideo();
-      setIsPlaying(true);
+    try {
+      if (isPlaying) {
+        playerRef.current.pauseVideo();
+        setIsPlaying(false);
+      } else {
+        playerRef.current.playVideo();
+        setIsPlaying(true);
+      }
+    } catch (error) {
+      console.warn("YouTube player instance togglePlay error:", error);
     }
   };
 

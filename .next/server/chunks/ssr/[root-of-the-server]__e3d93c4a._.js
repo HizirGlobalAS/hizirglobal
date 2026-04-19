@@ -6,6 +6,6 @@ module.exports=[193695,(a,b,c)=>{b.exports=a.x("next/dist/shared/lib/no-fallback
             description,
             stats,
             href
-        }`)}async function h({params:a}){let{lang:e}=await a,f=["en","tr","ru","az"].includes(e)?e:"tr",h=await (0,d.getDictionary)(f),i=await g();return(0,b.jsx)("main",{className:"min-h-screen bg-gray-50 dark:bg-[#0F0F0F] transition-colors duration-300",children:(0,b.jsx)(c.default,{dict:h,lang:f,sanityBrands:i})})}a.s(["default",()=>h,"generateMetadata",()=>f])}];
+        }`)}async function h({params:a}){let{lang:e}=await a,f=["en","tr","ru","az"].includes(e)?e:"tr",h=await (0,d.getDictionary)(f),i=await g();return(0,b.jsx)("main",{className:"min-h-screen bg-gray-50 dark:bg-[#0F0F0F] transition-colors duration-300",children:(0,b.jsx)(c.default,{dict:h,lang:f,sanityBrands:i})})}a.s(["default",()=>h,"generateMetadata",()=>f,"revalidate",0,60])}];
 
 //# sourceMappingURL=%5Broot-of-the-server%5D__e3d93c4a._.js.map

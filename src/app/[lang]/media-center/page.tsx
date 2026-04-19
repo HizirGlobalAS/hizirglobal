@@ -16,6 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     };
 }
 
+export const revalidate = 60; // 1 minute ISR caching
+
 async function getMediaData() {
     const pressReleases = await client.fetch(`*[_type == "pressRelease"] | order(publishDate desc) {
         _id,

@@ -85,14 +85,15 @@ export function GalleryClient({ lang, dict, sanityGallery }: GalleryClientProps)
       />
 
       {filteredCollections.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="flex md:grid flex-nowrap overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none pb-12 md:pb-0 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 -mx-4 px-4 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden">
           {filteredCollections.map((col: any) => (
-            <CollectionCard
-              key={col.id}
-              collection={col}
-              lang={lang}
-              onClick={setSelectedCollectionId}
-            />
+            <div key={col.id} className="shrink-0 snap-center w-[85vw] sm:w-[350px] md:w-auto h-full">
+              <CollectionCard
+                collection={col}
+                lang={lang}
+                onClick={setSelectedCollectionId}
+              />
+            </div>
           ))}
         </div>
       ) : (

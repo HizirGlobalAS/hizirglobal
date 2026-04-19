@@ -248,12 +248,12 @@ export default function BrandsClient({ dict, lang, sanityBrands }: { dict: any, 
                 </div>
 
                 {/* Filters */}
-                <div className="flex flex-wrap justify-center gap-4 mb-20 mt-20">
+                <div className="flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-3 md:gap-4 mb-20 mt-20 overflow-x-auto snap-x snap-mandatory md:snap-none -mx-4 px-4 md:mx-0 md:px-0 pb-4 md:pb-0 [&::-webkit-scrollbar]:hidden">
                     {categoryKeys.map((key) => (
                         <button
                             key={key}
                             onClick={() => setActiveCategoryKey(key)}
-                            className={`px-8 py-3 rounded-full text-sm font-medium transition-all border font-body ${activeCategoryKey === key
+                            className={`px-6 md:px-8 py-3 rounded-full text-sm font-medium transition-all border font-body whitespace-nowrap shrink-0 snap-start md:snap-none ${activeCategoryKey === key
                                 ? "bg-primary text-white border-primary shadow-lg"
                                 : "bg-gray-100 dark:bg-[#1A1A1A] border-gray-200 dark:border-gray-800 text-gray-700 dark:text-gray-400 hover:border-primary hover:text-primary"
                                 }`}
@@ -264,8 +264,8 @@ export default function BrandsClient({ dict, lang, sanityBrands }: { dict: any, 
                 </div>
 
                 {/* Grid */}
-                <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10">
-                    <AnimatePresence>
+                <motion.div layout className="flex md:grid flex-nowrap overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none pb-12 md:pb-0 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 xl:gap-10 -mx-4 px-4 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden">
+                    <AnimatePresence mode="popLayout">
                         {filteredBrands.map((brand) => (
                             <motion.div
                                 layout
@@ -274,7 +274,7 @@ export default function BrandsClient({ dict, lang, sanityBrands }: { dict: any, 
                                 animate={{ opacity: 1, scale: 1 }}
                                 exit={{ opacity: 0, scale: 0.9 }}
                                 transition={{ duration: 0.3 }}
-                                className="group relative bg-white dark:bg-[#1A1A1A] rounded-2xl p-8 border border-gray-200 dark:border-gray-800 hover:border-primary hover:shadow-[0_10px_40px_-10px_rgba(30,171,127,0.3)] transition-all duration-300 transform hover:-translate-y-2 flex flex-col"
+                                className="group relative bg-white dark:bg-[#1A1A1A] rounded-2xl p-8 border border-gray-200 dark:border-gray-800 hover:border-primary hover:shadow-[0_10px_40px_-10px_rgba(30,171,127,0.3)] transition-all duration-300 transform hover:-translate-y-2 flex flex-col shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center"
                             >
                                 <div className="flex justify-between items-start mb-8">
                                     <div className="h-14 w-14 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 group-hover:bg-primary/10 group-hover:text-primary transition-colors duration-300">
@@ -330,7 +330,7 @@ export default function BrandsClient({ dict, lang, sanityBrands }: { dict: any, 
                         layout
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        className="flex flex-col items-center justify-center bg-[#1A1A1A]/50 rounded-2xl border border-dashed border-gray-800 p-8 min-h-[400px] hover:border-primary hover:bg-[#1A1A1A] transition-all duration-300 cursor-default group"
+                        className="flex flex-col items-center justify-center bg-[#1A1A1A]/50 rounded-2xl border border-dashed border-gray-800 p-8 min-h-[400px] hover:border-primary hover:bg-[#1A1A1A] transition-all duration-300 cursor-default group shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center"
                     >
                         <div className="h-20 w-20 rounded-full bg-gray-900 flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
                             <Rocket size={32} className="text-gray-600 group-hover:text-primary transition-colors" />

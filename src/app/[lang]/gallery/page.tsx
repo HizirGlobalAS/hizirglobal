@@ -15,6 +15,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     };
 }
 
+export const revalidate = 60; // 1 minute ISR caching
+
 async function getGalleryData() {
     return client.fetch(`*[_type == "gallery"] | order(date desc) {
         _id,
